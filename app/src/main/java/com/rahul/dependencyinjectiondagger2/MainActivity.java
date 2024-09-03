@@ -8,7 +8,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import javax.inject.Inject;
+
 public class MainActivity extends AppCompatActivity {
+
+    @Inject
+    Mobile mobile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +26,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Mobile mobile ;
-        MobileComponent mobileComponent = DaggerMobileComponent.builder()
-                .rAMModule(new RAMModule(12))
-                .build();
+        MobileApp.getMobileApp().getMobileComponent().getMobile();
 
-        mobile = mobileComponent.getMobile();
     }
 }
