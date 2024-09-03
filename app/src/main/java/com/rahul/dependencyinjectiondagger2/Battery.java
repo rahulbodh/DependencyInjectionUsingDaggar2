@@ -4,15 +4,7 @@ import android.util.Log;
 
 import javax.inject.Inject;
 
-public class Battery {
+public interface Battery {
 
-    int batteryCapacity;
-
-    public Battery() {
-        Log.d("TAGY", "Battery constructor called");
-    }
-
-    public int getBatteryCapacity() {
-        return batteryCapacity;
-    }
+ void showType();
 }

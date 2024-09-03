@@ -8,6 +8,8 @@ public class Mobile {
     CPU cpu;
     MemoryCard memoryCard;
 
+    // Now battery is an interface
+    // we can't pass battery interface , we need to pass a child
     @Inject
     public Mobile(Battery battery, CPU cpu, MemoryCard memoryCard) {
         this.battery = battery;
@@ -16,7 +18,6 @@ public class Mobile {
     }
 
     public void printMobileSpecs() {
-        System.out.println("Battery Capacity: " + battery.getBatteryCapacity());
         System.out.println("Processor Name: " + cpu.getProcessor().getProcessorName());
         System.out.println("Memory Card Size: " + memoryCard.getMemoryCardSize());
     }
