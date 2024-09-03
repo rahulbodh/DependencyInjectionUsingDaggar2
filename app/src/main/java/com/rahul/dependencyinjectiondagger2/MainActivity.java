@@ -22,7 +22,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Mobile mobile ;
-        MobileComponent mobileComponent = DaggerMobileComponent.builder().build();
+        MobileComponent mobileComponent = DaggerMobileComponent.builder()
+                .rAMModule(new RAMModule(12))
+                .build();
+
         mobile = mobileComponent.getMobile();
     }
 }
