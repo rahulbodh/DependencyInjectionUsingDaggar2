@@ -8,7 +8,6 @@ public class Battery {
 
     int batteryCapacity;
 
-    @Inject
     public Battery() {
         Log.d("TAGY", "Battery constructor called");
     }
